@@ -15,7 +15,13 @@ module da3_ldac_cs_controller (
     output logic da3_ldac_n
 );
 
-    import comb_filter_pkg::*;
+    typedef enum logic [1:0] {
+        DA3_LDAC_IDLE,
+        DA3_LDAC_ASSERT_LOW,
+        DA3_LDAC_RELEASE_HIGH,
+        DA3_LDAC_POST_GAP
+    } da3_ldac_state_t;
+
 
     da3_ldac_state_t ldac_state;
     logic da3_ldac_n_reg;

@@ -26,7 +26,11 @@ module ad1_programmer_fsm #(
     output logic [2:0]  sample_channel
 );
 
-    import comb_filter_pkg::*;
+    typedef enum logic [2:0] {
+        AD1_ST_CS_HIGH_WAIT,
+        AD1_ST_READ,
+        AD1_ST_PUBLISH
+    } ad1_state_t;
 
     ad1_state_t state;
     localparam int CS_WAIT_W = (CS_HIGH_CYCLES <= 1) ? 1 : $clog2(CS_HIGH_CYCLES + 1);

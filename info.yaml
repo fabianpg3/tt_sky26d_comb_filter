@@ -24,7 +24,6 @@ project:
     - "comb_filter_center.sv"
     - "comb_filter_core.sv"
     - "comb_filter_dac_mapper.sv"
-    - "comb_filter_pkg.sv"
     - "comb_filter_register.sv"
     - "comb_filter_top.sv"
     - "da3_ldac_cs_controller.sv"

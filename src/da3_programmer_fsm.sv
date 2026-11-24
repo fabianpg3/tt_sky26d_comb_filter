@@ -25,7 +25,15 @@ module da3_programmer_fsm #(
     input  logic        ldac_strobe_busy
 );
 
-    import comb_filter_pkg::*;
+    typedef enum logic [2:0] {
+        DA3_ST_INIT_WRITE,
+        DA3_ST_WAIT_INIT,
+        DA3_ST_IDLE,
+        DA3_ST_WRITE_SAMPLE,
+        DA3_ST_WAIT_SAMPLE,
+        DA3_ST_WAIT_LDAC_ASSERT,
+        DA3_ST_WAIT_LDAC_DONE
+    } da3_state_t;
 
     da3_state_t state;
     logic   xfer_active;
