@@ -21,7 +21,7 @@ It works by adding a delayed version of a sample to the current sample. In this 
 
 *Magnitude response of a comb filter, taken from [1]*
 
-Furthermore, to implement this behavior, it was necessary to manipulate the data in the filter because the ADC only works from 0 V to 3.3 V, so by default there is no way to capture negative samples. To solve this, data centering was applied so that every sample is shifted around a mean reference value. For example, samples between 0 V and 1.65 V are considered negative and, consequently, samples between 1.65 V and 3.3 V are considered positive. Finally, it is worth mentioning the reconfigurable behavior of this design through the programmed system clock value and how the SPI master derives SCLK from it. Since the ADC delivers one new sample every some SCLK cycles, the sampling frequency is a function of the system clock.
+Furthermore, to implement this behavior, it was necessary to manipulate the data in the filter because the ADC only works from 0 V to 3.3 V, so by default there is no way to capture negative samples. To solve this, data centering was applied so that every sample is shifted around a mean reference value. For example, samples between 0 V and 1.65 V are considered negative and, consequently, samples between 1.65 V and 3.3 V are considered positive. Finally, it is worth mentioning the reconfigurable behavior of this design through the programmed system clock value and how the SPI master derives SCLK from it. Since the ADC delivers one new sample every fixed number of SCLK cycles, the sampling frequency is a function of the system clock.
 
 Some technical specifications:
 1. SPI interface for ADC was designed for PMOD AD1.
@@ -77,7 +77,7 @@ To validate this design using real PMOD boards and timing constraints, FPGA emul
 
 ![Local image](fpga_waves.png)
 
-*Waves of the emulated design in a FPGA Nexys Video board, using AMD Vivado tool*
+*Waveforms of the emulated design on a Nexys Video FPGA board, captured using AMD Vivado*
 
 
 If you are interested in how this was tested, please check this other repository: <https://github.com/fabianpg3/comb_filter>. It includes a UVM environment for functional verification and an FPGA flow for emulation and testing on real hardware using the PMODs and the Nexys Video board.
@@ -87,7 +87,7 @@ Here are a couple of pictures showing the real setup mounted in the laboratory.
 ![Local image](lab_1.png)
 ![Local image](lab_2.png)
 
-Finally, here is a video with captured live behavior: [link](https://youtu.be/b6mxWUtuAvc)
+Finally, here is a video with captured live behavior: [YouTube video](https://youtu.be/b6mxWUtuAvc)
 
 ## External hardware
 
@@ -99,4 +99,4 @@ Finally, here is a video with captured live behavior: [link](https://youtu.be/b6
 
 ---
 
-I want to express my gratitude to my family. Thank you for always believing in me and encouraging me to keep learning and exploring new boundaries. I also want to thank Instituto Tecnológico de Costa Rica, especially the Department of Electronic Engineering. It was very rewarding to apply the knowledge and experience I gained in the mixed-signal course.
+I want to express my gratitude to my family. Thank you for always believing in me and encouraging me to keep learning and exploring new boundaries. I also want to thank Instituto Tecnologico de Costa Rica, especially the Department of Electronic Engineering, as well as Rydev Inc. for all of the support. It was very rewarding to apply the knowledge and experience I gained in the mixed-signal course.

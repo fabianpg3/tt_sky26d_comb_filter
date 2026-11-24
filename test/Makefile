@@ -6,7 +6,7 @@ SIM ?= icarus
 FST ?= -fst # Use more efficient FST format
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = tt_um_fabianpg3_comb_filter.sv ad1_capture_top.sv ad1_programmer_fsm.sv comb_filter_adder.sv comb_filter_center.sv comb_filter_core.sv comb_filter_dac_mapper.sv comb_filter_register.sv comb_filter_top.sv da3_ldac_cs_controller.sv da3_output_top.sv da3_programmer_fsm.sv spi_master.sv
 
 ifneq ($(GATES),yes)
 
