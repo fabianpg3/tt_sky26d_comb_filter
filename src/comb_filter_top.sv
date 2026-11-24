@@ -32,6 +32,7 @@ module comb_filter_top #(
 
     logic                      filter_valid;
     logic [DAC_DATA_WIDTH-1:0] filter_sample;
+    logic signed [DAC_DATA_WIDTH-1:0] filter_sample_signed;
     logic [ADC_DATA_WIDTH-1:0] mapped_dac_sample;
     logic [ADC_DATA_WIDTH-1:0] mapped_dac_sample_from_mapper;
 
@@ -69,9 +70,10 @@ module comb_filter_top #(
         .CENTER_CODE(2048),
         .GAIN_SHIFT(1)
     ) u_comb_filter_dac_mapper (
-        .in_sample($signed(filter_sample)),
+        .in_sample(filter_sample_signed),
         .out_sample(mapped_dac_sample_from_mapper)
     );
+    assign filter_sample_signed = $signed(filter_sample);
     assign mapped_dac_sample = mapped_dac_sample_from_mapper;
 
     da3_output_top #(
