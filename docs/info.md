@@ -35,11 +35,6 @@ Further work:
 2. Add more than one delay stage (i.e., register) in the datapath, so more nulls or spikes can appear before the Nyquist frequency and aliasing effects can be reduced.
 
 
-![Local image](further_work.png)
-
-*Effect of adding more delays to a feedforward comb filter design, taken from [1]*
-
-
 References:
 
 - [1] 2nd Edition: R. J. Baker, CMOS Mixed-Signal Circuit Design, 2nd ed. Piscataway, NJ, USA: IEEE Press / John Wiley & Sons, 2009
@@ -84,7 +79,6 @@ If you are interested in how this was tested, please check this other repository
 
 Here are a couple of pictures showing the real setup mounted in the laboratory.
 
-![Local image](lab_1.png)
 ![Local image](lab_2.png)
 
 Finally, here is a video with captured live behavior: [YouTube video](https://youtu.be/b6mxWUtuAvc)
