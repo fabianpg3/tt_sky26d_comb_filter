@@ -77,9 +77,7 @@ To validate this design using real PMOD boards and timing constraints, FPGA emul
 
 If you are interested in how this was tested, please check this other repository: <https://github.com/fabianpg3/comb_filter>. It includes a UVM environment for functional verification and an FPGA flow for emulation and testing on real hardware using the PMODs and the Nexys Video board.
 
-Here are a couple of pictures showing the real setup mounted in the laboratory.
-
-![Local image](lab_2.png)
+Pictures of the experimental setup mounted in the laboratory can be found in the docs/ folder of this project repository.
 
 Finally, here is a video with captured live behavior: [YouTube video](https://youtu.be/b6mxWUtuAvc)
 
